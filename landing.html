@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versia's Tempting Treats - Order Now</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #fff;
+        }
+        header {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+        }
+        header .login-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        header .login-button:hover {
+            background-color: #d35400;
+        }
+        .hero {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-image: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0.5)), url('https://st3.depositphotos.com/3300441/14591/i/450/depositphotos_145917937-stock-photo-assorted-indian-food.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.6rem;
+        }
+        .hero .cta {
+            margin-top: 1.5rem;
+        }
+        .hero .cta button {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.4rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .hero .cta button:hover {
+            background-color: #d35400;
+        }
+        .content {
+            padding: 3rem 2rem;
+        }
+        .offers {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .offer-card {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            width: 46%;
+            transform-style: preserve-3d;
+            animation: bounceRotate 2s ease-in-out infinite, colorChange 3s ease-in-out infinite;
+        }
+
+        @keyframes bounceRotate {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+            50% {
+                transform: translateY(0) rotate(-10deg);
+            }
+            75% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        @keyframes colorChange {
+            0%, 100% {
+                background-color: #e74c3c;
+            }
+            50% {
+                background-color: #f39c12;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .offer-card .offer-content {
+            backface-visibility: hidden;
+        }
+        .offer-card h3 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        .offer-card p {
+            font-size: 1.1rem;
+        }
+        .swiper-container {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        .card {
+            flex: 0 0 auto;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            width: 320px;
+            overflow: hidden;
+            text-align: center;
+            scroll-snap-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.06);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            color: #34495e;
+        }
+        .card p {
+            padding: 0 1rem;
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+        .card button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 1rem 1.2rem;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .card button:hover {
+            background-color: #c0392b;
+        }
+        .view-more {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: #e67e22;
+            text-align: center;
+        }
+        .view-more:hover {
+            color: #d35400;
+        }
+        .view-more i {
+            margin-left: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 3rem;
+            font-size: 1.1rem;
+        }
+        footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        footer .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        footer .social-icons a:hover {
+            color: #e67e22;
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+        .top-rated {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: #34495e;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Versia's Tempting Treats</h1>
+        <button class="login-button">Login</button>
+    </header>
+    <section class="hero">
+        <h2>Fresh, Tasty & Delivered Fast</h2>
+        <p>Order now and enjoy the flavors of your favorite dishes at home!</p>
+        <div class="cta">
+            <button>Order Now</button>
+        </div>
+    </section>
+    <section class="content">
+        <div class="offers">
+            <div class="offer-card">
+                <div class="offer-content">
+                    <h3>50% OFF on First Orders</h3>
+                    <p>Get 50% off your first order with us! Taste the best for less.</p>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-content">
+                    <h3>Free Delivery on Orders Over ₹500</h3>
+                    <p>Enjoy free delivery when your order is above ₹500. Taste the difference!</p>
+                </div>
+            </div>
+        </div>
+        <div class="top-rated">
+            <span><h2>Order our best food options</h2></span>
+        </div>
+        <div class="swiper-container">
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/default-classic-indian-mutton-biryani-served-clay-pot_1179130-112511.jpg" alt="Biriyani">
+                <h3>Royal Biriyani Feast</h3>
+                <p>Experience the magic of our aromatic biriyani—crafted to delight every moment!</p>
+                <button><i class="fas fa-cart-plus"></i> Order Now</button>
+            </div>
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/tasty-pepperoni-pizza_752237-20384.jpg" alt="Pizza">
+                <h3>Delicious Pizza</h3>
+                <p>Try our cheesy and freshly baked pizzas with a variety of toppings.</p>
+                <button><i class="fas fa-cart-plus"></i> Order Now</button>
+            </div>
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/closeup-juicy-burger-with-fries-it-look-very-delicious-big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-red-onion_620624-6875.jpg" alt="Burgers">
+                <h3>Juicy Burgers</h3>
+                <p>Savor our mouth-watering burgers, made with the freshest ingredients.</p>
+                <button><i class="fas fa-cart-plus"></i> Order Now</button>
+            </div>
+            <div class="card">
+                <img src="https://www.austriajuice.com/hs-fs/hubfs/beverage%20compounds_drinks.jpg?width=705&name=beverage%20compounds_drinks.jpg" alt="Drinks">
+                <h3>Refreshing Drinks</h3>
+                <p>Quench your thirst with our range of cool and refreshing beverages.</p>
+                <button><i class="fas fa-cart-plus"></i> Order Now</button>
+            </div>
+            <div class="card">
+                <img src="https://th.bing.com/th/id/R.abde79715125b75bf5601a1c78318e1e?rik=fOf3%2b1qg7k%2f9aw&riu=http%3a%2f%2fwww.travelsiteindia.com%2fblog%2fwp-content%2fuploads%2f2018%2f04%2ftraditional-indian-food-sessions.jpg&ehk=hZj0OmrOGIC9z3k%2fmeYcLe5x%2fUkpQeyo7uwn%2fLYvN84%3d&risl=&pid=ImgRaw&r=0" alt="Meals">
+                <h3>Indian Delights</h3>
+                <p>Taste the comfort of home-cooked meals, made with love and bursting with tradition.</p>
+                <button><i class="fas fa-cart-plus"></i> Order Now</button>
+            </div>
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/illustration-traditional-dumpling-momos-food-from-nepal-served_756405-57085.jpg" alt="Momos">
+                <h3>Steamy Momo Treats</h3>
+                <p>Indulge in our savory momos, crafted to perfection with rich fillings wrapped in soft, tender dough.</p>
+                <button><i class="fas fa-cart-plus"></i> Order Now</button>
+            </div>
+            <div class="card">
+                <img src="https://th.bing.com/th/id/R.2ff3002f7472eed1bfc70a0501195e2d?rik=%2bw3cFKiz6pfglw&riu=http%3a%2f%2feskipaper.com%2fimages%2fdessert-wallpaper-hd-1.jpg&ehk=3OXDDAHAUSfZ02aFnLswh5UC6o6Mn5nhDPkbkDuOfBo%3d&risl=&pid=ImgRaw&r=0" alt="Desserts">
+                <h3>Dreamy Desserts</h3>
+                <p>Experience a burst of sweetness with our delectable desserts, guaranteed to satisfy your sugar cravings.</p>
+                <button><i class="fas fa-cart-plus"></i> Order Now</button>
+            </div>
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/assorted-indian-food-black-background_756748-18866.jpg" alt="Indian Food">
+                <h3>View More Items</h3>
+                <button><i class="fas fa-arrow-right"></i> View More</button>
+            </div>
+        </div>
+        <div class="view-more">
+            <span>Place Your Order Now <i class="fas fa-arrow-right"></i></span>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Versia's Tempting Treats. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:contact@versiatreats.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+917010108157"><i class="fas fa-phone"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
